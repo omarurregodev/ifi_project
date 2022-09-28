@@ -111,7 +111,7 @@ function InputData() {
     }
 
     return (
-        <div className='text-center bg-darkWhite' style={styles.heightContainer}>
+        <div className='text-center bg-darkWhite h-full' style={styles.heightContainer}>
             <div className='grid grid-cols-1'>
                 <h1 className='pt-28 mt-1 font-bold text-3xl'>Desarrollo del Cálculo del IFI</h1>
             </div>
@@ -206,6 +206,6 @@ export default InputData;
 
 const styles = {
     heightContainer: {
-        height: '94vh'
+        // height: '94vh'
     }
 }
