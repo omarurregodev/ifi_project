@@ -109,7 +109,7 @@ function InputData() {
             alert("Debe de cargar toda la información!")
         }
     }
-    
+
     return (
         <div className='text-center bg-darkWhite' style={styles.heightContainer}>
             <div className='grid grid-cols-1'>
@@ -118,7 +118,8 @@ function InputData() {
             <div className='grid grid-cols-2 gap-4'>
                 <div className='pt-8 pl-14 text-left'>
                     <h3 className='text-2xl font-bold'>Alimentación de Variables</h3>
-                    <h4 className='text-xl pt-4 pb-4'>Variable Fricción</h4>
+                    <h4 className='text-xl pt-6 pb-2 font-bold'>Variable Fricción</h4>
+                    <h6 className='text-xl pt-2 pb-4'><span className='font-bold'>Paso 1.</span> Seleccione el equipo con el cuál se realizó la medición.</h6>
                     <select id="equipos" className="bg-white border border-gray-300 text-darkGrey text-base rounded-lg focus:ring-green focus:border-green block w-full p-2.5 cursor-pointer" onChange={selectChange}>
                         <option value="">Selecciona una opción</option>
                         {
@@ -127,7 +128,8 @@ function InputData() {
                             })
                         }
                     </select>
-                    <div className='pt-8 text-center'>    
+                    <h6 className='text-xl pt-4 pb-4'><span className='font-bold'>Paso 2.</span> Cargue el archivo a procesar(los archivos permitidos son archivos con extensión ".csv" en formato: absInicial, absFinal, friccion, velocidad).</h6>
+                    <div className='pt-4 text-center'>    
                         <input
                             onChange={changeHandlerFriccion}
                             id="csvInputFriccion"
@@ -136,7 +138,8 @@ function InputData() {
                         />
                         {/* <button className='text-sm border p-2 border-green rounded hover:text-darkWhite hover:bg-green hover:transition' onClick={printArrayData}>Subir archivo .csv</button>           */}
                     </div>
-                    <h4 className='text-xl pt-4 pb-4'>Variable Textura</h4>
+                    <h4 className='text-xl pt-6 pb-2 font-bold'>Variable Textura</h4>
+                    <h6 className='text-xl pt-4 pb-4'><span className='font-bold'>Paso 3.</span> Cargue el archivo a procesar(los archivos permitidos son archivos con extensión ".csv" en formato: absInicial, absFinal, textura).</h6>
                     <div className='pt-2 text-center'>
                         <input
                             onChange={changeHandlerIri}
@@ -145,12 +148,16 @@ function InputData() {
                             type="File"
                         />
                     </div>
-                    <div className='pt-12 text-center'>
-                            <button className='text-xl border p-3 border-green rounded hover:text-darkWhite hover:bg-green hover:transition' onClick={validacionCalculo}>Cálcular IFI</button>
+                    <div className='pt-8 text-center'>
+                        <h6 className='text-xl pt-4 pb-4 text-left'><span className='font-bold'>Paso 4.</span> De click en el siguiente botón para realizar el cálculo de la variable IFI.</h6>
+                        <button className='text-xl border p-3 border-green rounded hover:text-darkWhite hover:bg-green hover:transition' onClick={validacionCalculo}>Cálcular IFI</button>
                         <Link to={`/result/${equipoValue}`}>
                             <a href="" id="linkCalculo"></a> 
                         </Link>
                     </div> 
+                    <div className='text-left pt-10'>
+                        <p className='font-sm'><span className='font-bold'>Nota: </span> Los archivos deben de tener el mismo abscisado y mismo numero de filas,<span className='font-bold'> NO</span> se debe de incluir la fila de encabezado.</p>
+                    </div>
                 </div>
                 <div className='grid place-content-center'>
                     <div id='mu_meter_div' className='flex max-w-2xl bg-blue text-darkWhite shadow-lg text-right hidden'>
