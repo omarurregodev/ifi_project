@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { dataContext } from '../context/dataContext';
+import Img_grafica from '../../assets/img/grafica.jpeg';
 
 
 
@@ -221,6 +222,9 @@ function ResultsData() {
                 </div>
                 <div>
                 <div className='text-center grid place-content-center gap-10 pt-44'>
+                    <div className='max-w-lg'>
+                        <img src={Img_grafica} alt="" />
+                    </div>
                     <Link to={'/'}>
                         <button className='text-xl border p-3 border-green rounded hover:text-darkWhite hover:bg-green hover:transition' onClick={download_csv_file}>Descargar resultados en .csv</button>
                     </Link>
