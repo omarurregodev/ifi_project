@@ -222,7 +222,7 @@ function ResultsData() {
                 </div>
                 <div>
                 <div className='text-center grid place-content-center gap-10 pt-44'>
-                    <div className='max-w-lg'>
+                    <div className='max-w-3xl'>
                         <img src={Img_grafica} alt="" />
                     </div>
                     <Link to={'/'}>
